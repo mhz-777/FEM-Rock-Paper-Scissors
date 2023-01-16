@@ -24,6 +24,34 @@
   /* header outline color */
   --header-outline: hsl(217, 16%, 45%);
 
+  /* font */
+  --site-font: 'Barlow Semi Condensed', sans-serif;
   
 }
+
+.App {
+  background: radial-gradient(var(--radial-grad-start), var(--radial-grad-end));
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 2px var(--header-outline);
+  border-radius: 1rem;
+}
+
+.header-container img {
+  width: 6rem;
+  height: 4rem;
+}
+
+
 
