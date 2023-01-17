@@ -20,20 +20,14 @@ const Game = () => {
     return (
         <section className="game-container">
             <section className="game-selections">
-                <div className="btn-wrapper" id='wrapper-rock'>
-                    <button className="rock-btn" id='rock' onClick={handleUserClick}>
-                        ROCK
-                    </button>
-                </div>
                 <div className="btn-wrapper" id='wrapper-paper'>
-                    <button className="paper-btn" id="paper" onClick={handleUserClick}>
-                        PAPER
-                    </button>
+                    <button className="paper-btn" id="paper" onClick={handleUserClick}> </button>
                 </div>
                 <div className="btn-wrapper" id='wrapper-scissors'>
-                    <button className="scissors-btn" id="scissors" onClick={handleUserClick}>
-                        SCISSORS
-                    </button>
+                    <button className="scissors-btn" id="scissors" onClick={handleUserClick}></button>
+                </div>
+                <div className="btn-wrapper" id='wrapper-rock'>
+                    <button className="rock-btn" id='rock' onClick={handleUserClick}></button>
                 </div>
             </section>
         </section>
