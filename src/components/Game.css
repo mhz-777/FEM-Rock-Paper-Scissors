@@ -1,0 +1,64 @@
+.game-selections {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: fit-content;
+    background-image: url(../assets/images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50% 50%;
+}
+
+.btn-wrapper {
+    width: 8rem;
+    height:8rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.75rem;
+}
+
+#wrapper-paper {
+    background: radial-gradient(var(--paper-grad-start), var(--paper-grad-end));
+}
+
+#wrapper-scissors {
+    background: radial-gradient(var(--scissors-grad-start), var(--scissors-grad-end));
+}
+
+#wrapper-rock {
+    background: radial-gradient(var(--rock-grad-start), var(--rock-grad-end));
+}
+
+.paper-btn {
+    background-color: white;
+    background-image: url(../assets/images/icon-paper.svg);
+    background-position: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+
+.scissors-btn {
+    background-color: white;
+    background-image: url(../assets/images/icon-scissors.svg);
+    background-position: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+.rock-btn {
+    background-color: white;
+    background-image: url(../assets/images/icon-rock.svg);
+    background-position: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+
+
+
