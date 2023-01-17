@@ -44,13 +44,31 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   border: solid 2px var(--header-outline);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+
+  width: 90vw;
+  height: 7rem;
+
+  padding: 1rem;
 }
 
 .header-container img {
   width: 6rem;
   height: 4rem;
+}
+
+.score-section {
+  background-color: white;
+  border-radius: 0.5rem;
+  font-family: var(--site-font);
+  text-align: center;
+  width: 5rem;
+}
+
+.score-section h1, h3 {
+  margin: 0;
 }
 
 
