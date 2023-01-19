@@ -12,11 +12,16 @@
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    place-items: center;
 
     background-image: url(../assets/images/bg-triangle.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50% 50%;
+}
+
+.hidden {
+    display: none;
 }
 
 .btn-wrapper {
@@ -31,7 +36,6 @@
 
 #wrapper-paper {
     grid-area: paper;
-    justify-self: self-end;
     background: radial-gradient(var(--paper-grad-start), var(--paper-grad-end));
 }
 
@@ -42,8 +46,11 @@
 
 #wrapper-rock {
     grid-area: rock;
-    justify-self: center;
     background: radial-gradient(var(--rock-grad-start), var(--rock-grad-end));
+}
+
+#wrapper-blank {
+    background-color: #18204271;
 }
 
 .paper-btn {
@@ -74,6 +81,42 @@
     border-radius: 50%;
 }
 
+.paper-icon-div {
+    background-color: white;
+    background-image: url(../assets/images/icon-paper.svg);
+    background-position: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
 
 
+.scissors-icon-div {
+    background-color: white;
+    background-image: url(../assets/images/icon-scissors.svg);
+    background-position: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+.rock-icon-div {
+    background-color: white;
+    background-image: url(../assets/images/icon-rock.svg);
+    background-position: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+.user-results-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.user-results-image-container {
+    display: flex;
+    justify-content: center;
+}
 
