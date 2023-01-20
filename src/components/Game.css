@@ -24,6 +24,7 @@
     display: none;
 }
 
+
 .btn-wrapper {
     width: 8rem;
     height:8rem;
@@ -81,42 +82,46 @@
     border-radius: 50%;
 }
 
-.paper-icon-div {
-    background-color: white;
-    background-image: url(../assets/images/icon-paper.svg);
-    background-position: center;
-    width: 6.25rem;
-    height: 6.25rem;
-    border-radius: 50%;
-}
-
-
-.scissors-icon-div {
-    background-color: white;
-    background-image: url(../assets/images/icon-scissors.svg);
-    background-position: center;
-    width: 6.25rem;
-    height: 6.25rem;
-    border-radius: 50%;
-}
-
-.rock-icon-div {
-    background-color: white;
-    background-image: url(../assets/images/icon-rock.svg);
-    background-position: center;
-    width: 6.25rem;
-    height: 6.25rem;
-    border-radius: 50%;
-}
-
-.user-results-container {
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.user-results-image-container {
+.game-results-container {
     display: flex;
     justify-content: center;
 }
 
+.game-results-container-hidden {
+    display: none;
+}
+
+.game-results-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-results-blank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-results-blank-hidden {
+    display: none;
+}
+
+.game-results-house {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.game-results-house-hidden {
+    display: none;
+}
+
+.result-heading {
+    color: white;
+    font-family: var(--site-font);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
