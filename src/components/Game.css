@@ -1,5 +1,5 @@
 .game-container {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 
@@ -124,4 +124,33 @@
     font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.1rem;
+}
+
+.game-results-cta {
+    display: flex;
+    justify-content: center;
+}
+
+.result-message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-message {
+    color: white;
+    font-family: var(--site-font);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.replay-btn {
+    background-color: white;
+    font-family: var(--site-font);
+    letter-spacing: 0.15rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border: none;
 }
