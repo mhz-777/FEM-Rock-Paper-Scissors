@@ -1,26 +1,35 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Game.css';
 import paperIcon from '../assets/images/icon-paper.svg';
+
 
 const Game = () => {
 
     // store user and cpu choices in state
-    const [userSelect, applySelect] = useState('');
-    const [cpuSelect, applyCpuChoice] = useState('');
+    const [userSelect, applySelect] = useState<string>('');
+    const [cpuSelect, applyCpuChoice] = useState<string>('');
 
     // state for when to hide/show sections
     const [userReady, setUserReady] = useState(false);
     const [cpuReady, setCpuReady] = useState(false);
 
     //state for final game decision
-    const [gameResult, setGameResult] = useState('');
+    const [gameResult, setGameResult] = useState<string>('');
+
 
     // store state, decide cpu move
     const handleUserClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         applySelect(event.currentTarget.id);
         setUserReady(true);
-        setTimeout(cpuRandomizer, 3000);
+        setTimeout(cpuRandomizer, 2000);
     }
+
+    // determine game result when both states are ready
+    useEffect(()=>{
+        if(userReady == true && cpuReady == true){
+            gameDecider();
+        }
+    }, [userReady, cpuReady]);
 
     // function to decide cpu move
     const cpuRandomizer = () => {
@@ -34,7 +43,30 @@ const Game = () => {
         }
         setCpuReady(true);
     }
-    
+
+
+    const gameDecider = () => {
+        if(userSelect === cpuSelect){
+            setGameResult('tie');
+        }else if(userSelect === 'paper' && cpuSelect === 'rock'){
+            setGameResult('win');
+        }else if(userSelect === 'scissors' && cpuSelect === 'paper'){
+            setGameResult('win');
+        }else if(userSelect === 'rock' && cpuSelect === 'scissors'){
+            setGameResult('win');
+        }else {
+            setGameResult('loss');
+        }
+    }
+
+    const resetGame = () => {
+        applySelect('');
+        applyCpuChoice('');
+        setUserReady(false);
+        setCpuReady(false);
+        setGameResult('');
+    }
+
 
     return (
         <section className="game-container">
@@ -91,6 +123,26 @@ const Game = () => {
                     }
                     <h2 className="result-heading">THE HOUSE PICKED</h2>
                 </section>
+            </section>
+            <section className="game-results-cta">
+                    {gameResult === 'win' &&
+                        <div className="result-message-container">
+                            <p className="result-message">YOU WIN!</p>
+                            <button className="replay-btn" onClick={resetGame}>PLAY AGAIN</button>
+                        </div>
+                    }
+                    {gameResult === 'loss' && 
+                        <div className="result-message-container">
+                            <p className="result-message">YOU LOSE!</p>
+                            <button className="replay-btn" onClick={resetGame}>PLAY AGAIN</button>
+                        </div>
+                    }
+                    {gameResult === 'tie' && 
+                        <div className="result-message-container">
+                            <p className="result-message">IT'S A TIE!</p>
+                            <button className="replay-btn" onClick={resetGame}>PLAY AGAIN</button>
+                        </div>
+                    }
             </section>
         </section>
     );
