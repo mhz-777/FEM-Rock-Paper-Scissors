@@ -1,0 +1,37 @@
+.rules-section {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.rules-section-hidden {
+    display: none;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.rules-header {
+    font-family: var(--site-font);
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.close-rules-btn {
+    margin-top: 6rem;
+    background-image: url(../assets/images/icon-close.svg);
+    background-position: center;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+}
