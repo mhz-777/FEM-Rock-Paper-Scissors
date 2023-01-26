@@ -71,5 +71,27 @@ header {
   margin: 0;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding-bottom: 1rem;
+}
 
+.rules-btn {
+  font-family: var(--site-font);
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  height: 3rem;
+  width: 8rem;
+  border: solid 1px white;
+  border-radius: 0.25rem;
+}
 
+.rules-btn-hidden {
+  display: none;
+}
