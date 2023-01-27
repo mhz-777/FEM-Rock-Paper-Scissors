@@ -1,9 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import './Game.css';
-import paperIcon from '../assets/images/icon-paper.svg';
 
+interface gameProps {
+    incrementScore: () => void;
+    decrementScore: () => void;
+}
 
-const Game = () => {
+const Game: React.FC<gameProps> = ({incrementScore, decrementScore}) => {
 
     // store user and cpu choices in state
     const [userSelect, applySelect] = useState<string>('');
@@ -50,12 +53,16 @@ const Game = () => {
             setGameResult('tie');
         }else if(userSelect === 'paper' && cpuSelect === 'rock'){
             setGameResult('win');
+            incrementScore();
         }else if(userSelect === 'scissors' && cpuSelect === 'paper'){
             setGameResult('win');
+            incrementScore();
         }else if(userSelect === 'rock' && cpuSelect === 'scissors'){
             setGameResult('win');
+            incrementScore();
         }else {
             setGameResult('loss');
+            decrementScore();
         }
     }
 
