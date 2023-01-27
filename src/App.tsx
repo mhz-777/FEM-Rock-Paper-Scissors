@@ -8,13 +8,26 @@ import { useEffect, useState } from 'react';
 const App: React.FC = () => {
 
 
-  //state for game score
-  const [gameScore, setGameScore] = useState<number>(0);
+  //state for game score fetched from local storage
+  const [gameScore, setGameScore] = useState(()=> {
+    return JSON.parse(localStorage.getItem('gameScore')!) || 0;
+  })
 
-  //update with new val
+  //increase score
   const incrementScore = () =>{
     setGameScore(gameScore + 1);
   }
+
+  //decrease score
+  const decrementScore = () => {
+    setGameScore(gameScore - 1);
+  }
+
+  //store score in local storage using use effect
+  useEffect(() => {
+    localStorage.setItem('gameScore', JSON.stringify(gameScore));
+  }, [gameScore]);
+
 
   //state to reveal rules
   const [isClicked, setClicked] = useState<boolean>(false);
@@ -36,7 +49,10 @@ const App: React.FC = () => {
         </div>
       </header>
       <main>
-        <Game />
+        <Game 
+          incrementScore={incrementScore}
+          decrementScore={decrementScore}
+        />
         <Rules
           isClicked={isClicked}
           handleClick = {handleClick}
