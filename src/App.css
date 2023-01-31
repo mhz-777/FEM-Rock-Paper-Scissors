@@ -104,9 +104,36 @@ footer {
   height: 3rem;
   width: 8rem;
   border: solid 1px white;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .rules-btn-hidden {
   display: none;
+}
+
+
+/* tablet sized screens */
+
+@media screen and (width >= 800px) and (height >= 800px) {
+  
+  header {
+    width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  footer {
+    text-align: right;
+    margin-right: 1.5rem;
+  }
+
+}
+
+/* styles to disable animations */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
