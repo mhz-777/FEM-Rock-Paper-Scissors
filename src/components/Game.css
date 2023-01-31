@@ -77,6 +77,9 @@
     box-shadow: inset 0px 5px rgb(216, 211, 211);
 }
 
+.paper-btn:hover {
+    animation: rotateRight 1s;
+}
 
 .scissors-btn {
     background-color: white;
@@ -89,6 +92,10 @@
     box-shadow: inset 0px 5px rgb(216, 211, 211);
 }
 
+.scissors-btn:hover {
+    animation: rotateLeft 1s;
+}
+
 .rock-btn {
     background-color: white;
     background-image: url(../assets/images/icon-rock.svg);
@@ -98,6 +105,10 @@
     border-radius: 50%;
     border: none;
     box-shadow: inset 0px 5px rgb(216, 211, 211);
+}
+
+.rock-btn:hover {
+    animation: rotateRight 1s;
 }
 
 .game-results-container {
@@ -130,7 +141,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    animation: reveal 0.5s;
 }
 
 .game-results-house-hidden {
@@ -151,6 +162,7 @@
 }
 
 .result-message-container {
+    animation: reveal 1.5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,6 +184,12 @@
     height: 3rem;
     border-radius: 0.5rem;
     border: none;
+    cursor: pointer;
+}
+
+.replay-btn:hover {
+    background-color: black;
+    color: white;
 }
 
 
@@ -194,5 +212,84 @@
 
     to {
         transform: translateX(0%);
+    }
+}
+
+@keyframes reveal {
+    from{
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotateRight {
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 30deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+}
+
+@keyframes rotateLeft {
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: -30deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+}
+
+
+
+/* media queries */
+
+/* tablet sized screens */
+
+@media screen and (width >= 800px) and (height >= 800px) {
+
+    .game-container {
+        margin-top: 8rem;
+        scale: 1.25;
+    }
+
+    .result-message-container {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .game-results-user {
+        margin-right: 14rem;
+    }
+
+    .result-heading {
+        position: absolute;
+        top: -3rem;
+    }
+
+}
+
+/* larger screens */
+
+@media screen and (width >= 1500px) and (height >= 1000px) {
+
+    .game-container {
+        scale: 1.5;
+        margin-top: 15rem;
     }
 }
