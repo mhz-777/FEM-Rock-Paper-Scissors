@@ -19,18 +19,22 @@ const Game: React.FC<gameProps> = ({incrementScore, decrementScore}) => {
     //state for final game decision
     const [gameResult, setGameResult] = useState<string>('');
 
+    //state for dynamic classname
+    const [dynamicClass, setDynamicClass] = useState<string>('');
+
 
     // store state, decide cpu move
     const handleUserClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         applySelect(event.currentTarget.id);
         setUserReady(true);
-        setTimeout(cpuRandomizer, 2000);
+        setTimeout(cpuRandomizer, 1500);
     }
 
     // determine game result when both states are ready
     useEffect(()=>{
         if(userReady == true && cpuReady == true){
             gameDecider();
+            setDynamicClass('dynamic-shadow');
         }
     }, [userReady, cpuReady]);
 
@@ -72,6 +76,7 @@ const Game: React.FC<gameProps> = ({incrementScore, decrementScore}) => {
         setUserReady(false);
         setCpuReady(false);
         setGameResult('');
+        setDynamicClass('');
     }
 
 
@@ -91,17 +96,17 @@ const Game: React.FC<gameProps> = ({incrementScore, decrementScore}) => {
             <section className={`${userReady === true ? "game-results-container " : 'game-results-container-hidden'}`}>
                 <section className="game-results-user">
                     {userSelect === 'paper' &&
-                        <div className="btn-wrapper" id="wrapper-paper">
+                        <div className={`btn-wrapper ${dynamicClass}`} id="wrapper-paper">
                             <button className="paper-btn" id="paper"></button>
                         </div>
                     }
                     {userSelect === 'scissors' &&
-                        <div className="btn-wrapper" id="wrapper-scissors">
+                        <div className={`btn-wrapper ${dynamicClass}`} id="wrapper-scissors">
                             <button className="scissors-btn" id="scissors"></button>
                         </div>
                     }
                     {userSelect === 'rock' &&
-                        <div className="btn-wrapper" id="wrapper-rock">
+                        <div className={`btn-wrapper ${dynamicClass}`} id="wrapper-rock">
                             <button className="rock-btn" id="rock"></button>
                         </div>
                     }
