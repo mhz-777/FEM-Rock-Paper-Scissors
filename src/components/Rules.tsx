@@ -14,7 +14,7 @@ const Rules: React.FC<Props> = ({isClicked, handleClick}) => {
         <section className={`${isClicked === true ? 'rules-section' : 'rules-section-hidden'}`}>
             <section className="rules">
                 <h1 className="rules-header">RULES</h1>
-                <img src={rulesSVG} alt="rules" />
+                <img src={rulesSVG} className='rules-svg' alt="rules" />
                 <button className="close-rules-btn" onClick={handleClick}></button>
             </section>
         </section>
