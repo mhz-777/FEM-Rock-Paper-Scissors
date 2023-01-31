@@ -4,6 +4,7 @@
 
 
 .game-selections {
+    animation: slideIn 0.3s;
     display: grid;
     grid-template-areas:
     "paper scissors"
@@ -17,7 +18,7 @@
     background-image: url(../assets/images/bg-triangle.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 50% 50%;
+    background-size: 60% 60%;
 }
 
 .hidden {
@@ -35,19 +36,30 @@
     margin: 1.75rem;
 }
 
+.dynamic-shadow {
+    filter: drop-shadow(0 0 1.5rem rgb(15, 220, 235));
+}
+
+.btn-wrapper button:hover {
+    cursor: pointer;
+}
+
 #wrapper-paper {
     grid-area: paper;
     background: radial-gradient(var(--paper-grad-start), var(--paper-grad-end));
+    box-shadow: inset 0px -5px rgb(45, 84, 241);
 }
 
 #wrapper-scissors {
     grid-area: scissors;
     background: radial-gradient(var(--scissors-grad-start), var(--scissors-grad-end));
+    box-shadow: inset 0px -5px rgb(223, 110, 17);
 }
 
 #wrapper-rock {
     grid-area: rock;
     background: radial-gradient(var(--rock-grad-start), var(--rock-grad-end));
+    box-shadow: inset 0px -5px rgb(159, 10, 10);
 }
 
 #wrapper-blank {
@@ -61,6 +73,8 @@
     width: 6.25rem;
     height: 6.25rem;
     border-radius: 50%;
+    border: none;
+    box-shadow: inset 0px 5px rgb(216, 211, 211);
 }
 
 
@@ -71,6 +85,8 @@
     width: 6.25rem;
     height: 6.25rem;
     border-radius: 50%;
+    border: none;
+    box-shadow: inset 0px 5px rgb(216, 211, 211);
 }
 
 .rock-btn {
@@ -80,11 +96,14 @@
     width: 6.25rem;
     height: 6.25rem;
     border-radius: 50%;
+    border: none;
+    box-shadow: inset 0px 5px rgb(216, 211, 211);
 }
 
 .game-results-container {
     display: flex;
     justify-content: center;
+    animation: slideFromRight 0.3s;
 }
 
 .game-results-container-hidden {
@@ -153,4 +172,27 @@
     height: 3rem;
     border-radius: 0.5rem;
     border: none;
+}
+
+
+/* keyframes */
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
 }
