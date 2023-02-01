@@ -37,7 +37,7 @@
 }
 
 .dynamic-shadow {
-    filter: drop-shadow(0 0 1.5rem rgb(15, 220, 235));
+    filter: drop-shadow(0 0 1.25rem rgb(15, 220, 235));
 }
 
 .btn-wrapper button:hover {
@@ -256,6 +256,18 @@
 
 
 /* media queries */
+
+/* taller mobile devices */
+
+@media screen and (width >= 350px) and (height >= 800px) {
+    .game-container {
+        margin-top: 6rem;
+    }
+
+    .result-message-container {
+        margin-top: 3rem;
+    }
+}
 
 /* tablet sized screens */
 
